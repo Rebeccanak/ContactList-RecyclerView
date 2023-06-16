@@ -4,6 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rebecca.contactlist.databinding.ContactListItemBinding
+import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.CropCircleTransformation
+import jp.wasabeef.picasso.transformations.CropTransformation
+
 
 class ContactRvAdapter(var contactlist:List<ContactData>) :RecyclerView.Adapter<ContactViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -22,9 +26,30 @@ class ContactRvAdapter(var contactlist:List<ContactData>) :RecyclerView.Adapter<
         binding.tvName.text=currentContact.name
         binding.tvPhoneNumber.text=currentContact.phoneNumber
         binding.tvEmailAddress.text =currentContact.emailAddress
+        Picasso
+            .get()
+            .load(currentContact.avatar)
+            .resize(80,80)
+            .centerCrop()
+//            .placeholder(R.drawable.avatar)
+            .transform(CropCircleTransformation())
+            .into(binding.imageView
+
+            )
+
+
+//        Picasso
+//            .get()
+//            .load(currentContact.avatar)
+//            .resize(80,80)
+//            .centerInside()
+//            .transform(CropCircleTransformation())
+//            .into(binding.imageView)
+
 
 
 
     }
+
 }
 class ContactViewHolder( var binding:ContactListItemBinding): RecyclerView.ViewHolder(binding.root)

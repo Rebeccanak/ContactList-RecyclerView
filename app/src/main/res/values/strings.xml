@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Contact List</string>
+    <string name="first_name_required">First Name required</string>
+    <string name="last_name_required">Last Name required</string>
+    <string name="password_required">Password required</string>
+    <string name="phone_number_required">Phone Number required</string>
 </resources>

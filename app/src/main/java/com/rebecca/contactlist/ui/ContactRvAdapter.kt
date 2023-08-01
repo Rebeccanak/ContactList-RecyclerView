@@ -1,12 +1,12 @@
-package com.rebecca.contactlist
+package com.rebecca.contactlist.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.rebecca.contactlist.models.ContactData
 import com.rebecca.contactlist.databinding.ContactListItemBinding
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
-import jp.wasabeef.picasso.transformations.CropTransformation
 
 
 class ContactRvAdapter(var contactlist:List<ContactData>) :RecyclerView.Adapter<ContactViewHolder>(){
